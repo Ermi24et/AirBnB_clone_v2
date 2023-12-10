@@ -7,7 +7,6 @@ web_static folder of AirBnB clone repo using the function do_pack
 from fabric.api import local
 from datetime import datetime
 import os
-from collections.abc import Mapping
 
 
 def do_pack():
@@ -18,9 +17,9 @@ def do_pack():
     tim = datetime.utcnow().strftime('%Y%m%d%H%M%S')
     arch_name = 'versions/web_static_{}.tgz'.format(tim)
 
-    outp = local('tar -cvzf {} web_static'.format(arch_name), capture=True)
+    outp = local('tar -cvzf {} web_static'.format(arch_name))
 
-    if result.succeeded:
+    if outp.succeeded:
         print('Packing web_static to {}'.format(arch_name))
         return arch_name
     else:
