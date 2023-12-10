@@ -11,7 +11,10 @@ env.hosts = ["100.26.169.125", "52.207.134.230"]
 
 
 def do_deploy(archive_path):
-    """ a function that distributes an archive to the web server """
+    """
+    a function that distributes an archive to the web server
+    """
+
     if not os.path.exists(archive_path):
         return False
 
