@@ -25,11 +25,12 @@ def do_deploy(archive_path):
         put(archive_path, "/tmp/")
         uncompr_arch = "/data/web_static/releases/" + file_no_extn + "/"
         run("mkdir -p {}".format(uncompr_arch))
-        run("tar -xzf /tmp/{} -C {}".format(file_no_extn, uncompr_arch))
+        run("tar -xzf /tmp/{} -C {}".format(path_file, uncompr_arch))
         run("rm /tmp/{}".format(path_file))
-        run("mv {}web_static/* {}".format(path, path))
-        run("rm -rf {}web_static".format(path))
+        run("mv {}web_static/* {}".format(uncompr_arch, uncomr_arch))
+        run("rm -rf {}web_static".format(uncompr_arch))
         link = "/data/web_static/current"
+        run("rm -rf {}".format(link))
         run("ln -s {} {}".format(uncompr_arch, link))
         print("New version deployed!")
         return True
