@@ -12,3 +12,4 @@
 - How to create a dynamic template (loops, conditions…)
 - How to display in HTML data from a MySQL database
 Flask the web framework
+pip3 install Flask
