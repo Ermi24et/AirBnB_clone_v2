@@ -18,8 +18,8 @@ def states_list(id='0'):
     states = storage.all(State).values()
     amenities = storage.all(Amenity).values()
     place = storage.all(Place).values()
-    return render_template('10-hbnb_filters.html', states=states,
-                           amenities=amenities, place=place, id=id)
+    return render_template('100-hbnb.html', states=states,
+                           amenities=amenities, places=place, id=id)
 
 
 @app.teardown_appcontext
